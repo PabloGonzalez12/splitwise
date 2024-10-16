@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang=es>
+
+<head>
+  <meta charset=UTF-8>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel=stylesheet href=./src/css/style.css>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src=./src/js/index.js defer></script>
+  <title>Ejemplos clase</title>
+</head>
+
+<body>
+  <main>
+
+    <div id="home" class="page ">
+      <h2>Home</h2>
+      <button onclick="displayPage('users')">Users</button>
+    </div>
+
+    <div id="users" class="page">
+      <h2>Users</h2>
+      <button onclick="displayPage('home')">Home</button>
+      <button onclick="displayPage('add-user')">Add user</button>
+    </div>
+
+    <div id="add-user" class="page active">
+      <h2>Add user</h2>
+      <form id="myForm">
+        <input type="radio" id="female" name="genre" value="female" />
+        <input type="radio" id="male" name="genre" value="male" />
+        <input type="text" id="name" name="username" />
+        <button type="submit">Submit</button>
+      </form>
+
+      <button onclick="displayPage('users')">Back</button>
+    </div>
+
+  </main>
+</body>
+
+</html>
