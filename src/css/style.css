@@ -1,6 +1,299 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+
+main{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .page {
   display: none;
+  width: 480px;
 }
+
 .active {
   display: block;
+}
+
+#home, #add-expense, #users, #addUser, #balances{
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.493), rgba(128, 128, 128, 0.482));
+  height: 80%;
+  border-radius: 20px;
+  position: relative;
+}
+
+.banner{
+  background: url(../img/banner.jpg);
+  height: 180px;
+  position: relative;
+  border-radius: 20px;
+  margin-bottom: 80px;
+}
+
+.banner h2{
+  background: linear-gradient(to bottom, black, gray);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: absolute;
+  bottom: -15px;
+  left: 15px;
+}
+
+#home .banner button{
+  background: linear-gradient(to bottom, black, gray);
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  position: absolute;
+  bottom: -70px;
+  right: 20px;
+  cursor: pointer;
+}
+
+
+.buttons{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+  position: absolute;
+  bottom: 10px;
+}
+
+.buttons button{
+  width: 40%;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, black, gray);
+  color: white;
+  cursor: pointer;
+}
+
+
+
+
+.paids-main, .users-main, .balances-main{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  max-height: 55%;
+}
+
+
+.paid, .user{
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  gap: 12px;
+  height: 80px;
+  width: 90%;
+  border-radius: 10px;
+  border: 1px solid black;
+  color: white;
+  background: linear-gradient(to bottom, black, rgb(86, 86, 86));
+  padding: 20px;
+}
+
+.paid div:nth-child(1){
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.paid div:nth-child(2){
+  width: 20%;
+}
+
+.paid div:nth-child(2) img{
+  width: 100%;
+}
+
+.paid div:nth-child(3){
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+.addExpense{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.addExpense .expenseMain{
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  padding: 20px;
+}
+
+
+.addExpense .expenseMain div img{
+  width: 84px;
+  height: 80px;
+  border-radius: 8px;
+}
+
+
+.addExpense .expenseMain>div{
+  display: flex;
+  padding-left: 40px;
+  gap: 40px;
+}
+
+.addExpense .expenseMain>div div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+}
+
+
+.addExpense .expenseMain>div div input,select{
+  width: 80%;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.user div{
+  display: flex;
+  gap: 20px;
+  padding-left: 20px;
+  font-size: 1.5rem;
+}
+
+.user img{
+  width: 80%;
+  border-radius: 8px;
+}
+
+
+
+
+.add-users-main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  font-size: 1.5rem;
+}
+
+
+.username, .genre{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 8px;
+}
+
+
+.username input{
+  width: 80%;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+
+.icons {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 24px;
+  height: 100%;
+}
+
+.icons img{
+  width: 84px;
+  height: 80px;
+  cursor: pointer;
+}
+
+.icons img:hover{
+  width: 90px;
+  height: 86px;
+}
+
+.icons img,
+.balance img{
+  border-radius: 50%;
+}
+
+.icons .checked{
+  border: 5px solid black;
+  width: 94px;
+  height: 90px;
+}
+
+
+
+
+.balances-main{
+  align-items: center;
+  gap: 32px;
+  border: 3px solid black;
+  border-radius: 16px;
+  padding: 24px;
+  height: 70%;
+  margin: 0px 24px 0px 24px;
+}
+
+
+.balance{
+  display: flex;
+  align-items: center;
+  width: 60%;
+  gap: 8px;
+  border: 2px solid black;
+  border-radius: 16px;
+  width: 95%;
+  padding: 8px;
+  font-size: 1.5rem;
+}
+
+
+.balances-main::-webkit-scrollbar {
+  width: 15px;
+}
+
+.balances-main::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 16px;
+}
+
+.balances-main::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 16px;
+}
+
+.balances-main::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+#balances .buttons{
+  width: 100%;
 }

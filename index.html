@@ -1,39 +1,286 @@
 <!DOCTYPE html>
-<html lang=es>
+<html lang='es'>
 
 <head>
-  <meta charset=UTF-8>
+  <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <link rel=stylesheet href=./src/css/style.css>
+  <link rel='stylesheet' href='./src/css/style.css'>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <script src=./src/js/index.js defer></script>
-  <title>Ejemplos clase</title>
+  <script src='./src/js/index.js' defer></script>
+  <title>Splitwise</title>
 </head>
 
 <body>
   <main>
 
-    <div id="home" class="page ">
-      <h2>Home</h2>
-      <button onclick="displayPage('users')">Users</button>
+    <!-- HOME -->
+    <div id="home" class="page">
+      <div class="banner">
+        <h2>Home</h2>
+        <button onclick="displayPage('add-expense')">+</button>
+      </div>
+          
+      <div class="paids-main">
+        <div class="paid">
+          <div>
+            <span>Oct</span>
+            <span>10</span>
+          </div>
+          <div>
+            <img src="./src/img/user.jpg" alt="">
+          </div>
+          <div>
+            <span>Title</span>
+            <span>X paid X €</span>
+          </div>
+        </div>
+        
+      </div>
+      
+      <div class="buttons">
+        <button onclick="displayPage('users')">Users</button>
+        <button onclick="displayPage('balances')">Balances</button>
+      </div>
     </div>
 
+
+
+
+
+
+    <!-- USERS -->
+    
     <div id="users" class="page">
-      <h2>Users</h2>
-      <button onclick="displayPage('home')">Home</button>
-      <button onclick="displayPage('add-user')">Add user</button>
+      <div class="banner">
+        <h2>Users</h2>
+      </div>
+
+      <div class="users-main">
+        <div class="user">
+          <div>
+            <img src="./src/img/user.jpg" alt="">
+          </div>
+          <div>
+            <span>User Asta</span>
+          </div>
+        </div>
+        
+        
+      </div>
+
+
+      <div class="buttons">
+        <button onclick="displayPage('home')">Back</button>
+        <button type="submit" onclick="displayPage('addUser')">Add user</button>
+      </div>
+
     </div>
 
-    <div id="add-user" class="page active">
-      <h2>Add user</h2>
+
+
+
+
+    <!-- ADD AN USER -->
+    
+    <div id="addUser" class="page active">
+      <div class="banner">
+        <h2>Add an user</h2>
+      </div>
+
       <form id="myForm">
-        <input type="radio" id="female" name="genre" value="female" />
-        <input type="radio" id="male" name="genre" value="male" />
-        <input type="text" id="name" name="username" />
-        <button type="submit">Submit</button>
+
+        <div class="add-users-main">
+        
+          <div class="username">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+          </div>
+    
+          <div class="genre">
+            <div>
+              <label for="genre">Genre</label>
+            </div>
+            <div>
+              <input type="radio" id="male" name="genre" value="male" />
+              <label for="male">Hombre</label>
+            </div>
+            <div>
+              <input type="radio" id="female" name="genre" value="female" />
+              <label for="female">Female</label>
+            </div>
+          </div>
+
+
+
+
+          <div class="icons">
+            <div>
+              <input type="radio" name="icon1" id="icon1" class="page">
+              <label for="icon1">
+                <img src="./src/img/icons/icon1.jpg" alt="user" class="checked">
+              </label>
+            </div>
+
+            <div>
+              <input type="radio" name="icon1" id="icon1" class="page">
+              <label for="icon1">
+                <img src="./src/img/icons/icon2.jpg" alt="user">
+              </label>
+            </div>
+
+            <div>
+              <input type="radio" name="icon1" id="icon1" class="page">
+              <label for="icon1">
+                <img src="./src/img/icons/icon3.jpg" alt="user">
+              </label>
+            </div>
+
+            <div>
+              <input type="radio" name="icon1" id="icon1" class="page">
+              <label for="icon1">
+                <img src="./src/img/icons/icon4.jpg" alt="user">
+              </label>
+            </div>
+          </div>
+
+          
+        </div>
+
+        
       </form>
 
-      <button onclick="displayPage('users')">Back</button>
+      <div class="buttons">
+        <button onclick="displayPage('users')">Back</button>
+        <button type="submit" onclick="displayPage('users')">Confirm</button>
+      </div>
+
+    </div>
+
+
+
+
+    <!-- ADD EXPENSE -->
+    <div id="add-expense" class="page">
+      
+      <div class="addExpense">
+
+        <div class="banner">
+          <h2>Add expense</h2>
+        </div>
+
+        <div class="expenseMain">
+
+          <div>
+            <img src="./src/img/user.jpg" alt="user">
+            <div>
+              <label>User</label>
+              <select name="selectUser" id="selectUser">
+                <option value="Select" selected disabled>Select</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <img src="./src/img/money.png" alt="amount">
+            <div>
+              <label>Amount</label>
+              <input type="number" step="0.01" name="amountExpense" id="amountExpense"/>
+            </div>
+          </div>
+
+          <div>
+            <img src="./src/img/title.jpg" alt="title">
+            <div>
+              <label>Title</label>
+              <input type="text" name="amountTitle" id="amountTitle"/>
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+      
+      <div class="buttons">
+        <button onclick="displayPage('home')">Back</button>
+        <button type="submit" onclick="displayPage('home')">Confirm</button>
+      </div>
+      
+    </div>
+
+
+
+
+    <!-- BALANCES -->
+    
+    <div id="balances" class="page">
+      <div class="banner">
+        <h2>Balances</h2>
+      </div>
+
+      <div class="balances-main">
+        <div class="balance">
+          <div>
+            <img src="./src/img/user.jpg" alt="">
+          </div>
+          <div>
+            <div>User Asta</div>
+            <div>He has paid X€</div>
+            <div>He is owed X€</div>
+          </div>
+        </div>
+        
+        <div class="balance">
+          <div>
+            <img src="./src/img/user.jpg" alt="">
+          </div>
+          <div>
+            <div>User Asta</div>
+            <div>He has paid X€</div>
+            <div>He is owed X€</div>
+          </div>
+        </div>
+
+        <div class="balance">
+          <div>
+            <img src="./src/img/user.jpg" alt="">
+          </div>
+          <div>
+            <div>User Asta</div>
+            <div>He has paid X€</div>
+            <div>He is owed X€</div>
+          </div>
+        </div>
+
+        <div class="balance">
+          <div>
+            <img src="./src/img/user.jpg" alt="">
+          </div>
+          <div>
+            <div>User Asta</div>
+            <div>He has paid X€</div>
+            <div>He is owed X€</div>
+          </div>
+        </div>
+
+        <div class="balance">
+          <div>
+            <img src="./src/img/user.jpg" alt="">
+          </div>
+          <div>
+            <div>User Asta</div>
+            <div>He has paid X€</div>
+            <div>He is owed X€</div>
+          </div>
+        </div>
+        
+      </div>
+
+
+      <div class="buttons">
+        <button onclick="displayPage('home')">Back</button>
+        <button type="submit" onclick="displayPage('addUser')">Add user</button>
+      </div>
+
     </div>
 
   </main>
