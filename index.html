@@ -14,26 +14,14 @@
   <main>
 
     <!-- HOME -->
-    <div id="home" class="page">
+    <div id="home" class="page active">
       <div class="banner">
         <h2>Home</h2>
         <button onclick="displayPage('add-expense')">+</button>
       </div>
           
       <div class="paids-main">
-        <div class="paid">
-          <div>
-            <span>Oct</span>
-            <span>10</span>
-          </div>
-          <div>
-            <img src="./src/img/user.jpg" alt="">
-          </div>
-          <div>
-            <span>Title</span>
-            <span>X paid X €</span>
-          </div>
-        </div>
+        
         
       </div>
       
@@ -56,14 +44,7 @@
       </div>
 
       <div class="users-main">
-        <div class="user">
-          <div>
-            <img src="./src/img/user.jpg" alt="">
-          </div>
-          <div>
-            <span>User Asta</span>
-          </div>
-        </div>
+        
         
         
       </div>
@@ -82,7 +63,7 @@
 
     <!-- ADD AN USER -->
     
-    <div id="addUser" class="page active">
+    <div id="addUser" class="page">
       <div class="banner">
         <h2>Add an user</h2>
       </div>
@@ -93,7 +74,7 @@
         
           <div class="username">
             <label for="username">Username</label>
-            <input type="text" name="username" id="username">
+            <input type="text" name="username" id="username" required>
           </div>
     
           <div class="genre">
@@ -101,8 +82,8 @@
               <label for="genre">Genre</label>
             </div>
             <div>
-              <input type="radio" id="male" name="genre" value="male" />
-              <label for="male">Hombre</label>
+              <input type="radio" id="male" name="genre" value="male" checked />
+              <label for="male">Male</label>
             </div>
             <div>
               <input type="radio" id="female" name="genre" value="female" />
@@ -115,35 +96,35 @@
 
           <div class="icons">
             <div>
-              <input type="radio" name="icon1" id="icon1" class="page">
+              <input type="radio" name="icon" id="icon1" class="page" checked>
               <label for="icon1">
                 <img src="./src/img/icons/icon1.jpg" alt="user" class="checked">
               </label>
             </div>
 
             <div>
-              <input type="radio" name="icon1" id="icon1" class="page">
-              <label for="icon1">
+              <input type="radio" name="icon" id="icon2" class="page">
+              <label for="icon2">
                 <img src="./src/img/icons/icon2.jpg" alt="user">
               </label>
             </div>
 
             <div>
-              <input type="radio" name="icon1" id="icon1" class="page">
-              <label for="icon1">
+              <input type="radio" name="icon" id="icon3" class="page">
+              <label for="icon3">
                 <img src="./src/img/icons/icon3.jpg" alt="user">
               </label>
             </div>
 
             <div>
-              <input type="radio" name="icon1" id="icon1" class="page">
-              <label for="icon1">
+              <input type="radio" name="icon" id="icon4" class="page">
+              <label for="icon4">
                 <img src="./src/img/icons/icon4.jpg" alt="user">
               </label>
             </div>
           </div>
 
-          
+
         </div>
 
         
@@ -151,7 +132,7 @@
 
       <div class="buttons">
         <button onclick="displayPage('users')">Back</button>
-        <button type="submit" onclick="displayPage('users')">Confirm</button>
+        <button id="confirmExpense" type="submit">Confirm</button>
       </div>
 
     </div>
@@ -184,7 +165,7 @@
             <img src="./src/img/money.png" alt="amount">
             <div>
               <label>Amount</label>
-              <input type="number" step="0.01" name="amountExpense" id="amountExpense"/>
+              <input type="number" step="0.01" name="amountExpense" id="amountExpense" min="0.01"/>
             </div>
           </div>
 
@@ -202,7 +183,7 @@
       
       <div class="buttons">
         <button onclick="displayPage('home')">Back</button>
-        <button type="submit" onclick="displayPage('home')">Confirm</button>
+        <button type="submit">Confirm</button>
       </div>
       
     </div>
@@ -218,67 +199,14 @@
       </div>
 
       <div class="balances-main">
-        <div class="balance">
-          <div>
-            <img src="./src/img/user.jpg" alt="">
-          </div>
-          <div>
-            <div>User Asta</div>
-            <div>He has paid X€</div>
-            <div>He is owed X€</div>
-          </div>
-        </div>
         
-        <div class="balance">
-          <div>
-            <img src="./src/img/user.jpg" alt="">
-          </div>
-          <div>
-            <div>User Asta</div>
-            <div>He has paid X€</div>
-            <div>He is owed X€</div>
-          </div>
-        </div>
-
-        <div class="balance">
-          <div>
-            <img src="./src/img/user.jpg" alt="">
-          </div>
-          <div>
-            <div>User Asta</div>
-            <div>He has paid X€</div>
-            <div>He is owed X€</div>
-          </div>
-        </div>
-
-        <div class="balance">
-          <div>
-            <img src="./src/img/user.jpg" alt="">
-          </div>
-          <div>
-            <div>User Asta</div>
-            <div>He has paid X€</div>
-            <div>He is owed X€</div>
-          </div>
-        </div>
-
-        <div class="balance">
-          <div>
-            <img src="./src/img/user.jpg" alt="">
-          </div>
-          <div>
-            <div>User Asta</div>
-            <div>He has paid X€</div>
-            <div>He is owed X€</div>
-          </div>
-        </div>
         
       </div>
 
 
       <div class="buttons">
         <button onclick="displayPage('home')">Back</button>
-        <button type="submit" onclick="displayPage('addUser')">Add user</button>
+        <button id="settleUp" type="submit">Settle up</button>
       </div>
 
     </div>
